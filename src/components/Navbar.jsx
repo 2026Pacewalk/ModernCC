@@ -243,7 +243,11 @@ export default function Navbar() {
                       pathname === `/products/${cat.slug}`
                         ? 'border-harvest-400/60 bg-harvest-500/15 text-harvest-400'
                         : 'border-white/10 bg-white/5 text-white/85 hover:border-harvest-400/40 hover:bg-white/10'
-                    } ${i === PRODUCT_CATEGORIES.length - 1 ? 'col-span-2' : ''}`}
+                    } ${
+                      PRODUCT_CATEGORIES.length % 2 === 1 && i === PRODUCT_CATEGORIES.length - 1
+                        ? 'col-span-2'
+                        : ''
+                    }`}
                   >
                     <span className="text-xl">{cat.icon}</span>
                     <span className="leading-tight">{cat.name}</span>

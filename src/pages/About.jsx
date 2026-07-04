@@ -114,7 +114,7 @@ export default function About() {
           title="Our Products"
           subtitle="Affordable and effective crop protection and nutrition for the farming community."
         />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {PRODUCT_CATEGORIES.map((cat) => (
             <Link
               key={cat.slug}

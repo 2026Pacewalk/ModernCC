@@ -190,7 +190,7 @@ function ProductRange() {
         title="Our Product Range"
         subtitle="We have a wide variety of products so that our clients have good options."
       />
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {PRODUCT_CATEGORIES.map((cat) => (
           <Link
             key={cat.slug}

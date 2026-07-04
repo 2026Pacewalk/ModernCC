@@ -50,6 +50,13 @@ export const PRODUCT_CATEGORIES = [
     image: '/images/cat-fertilizers.png',
     blurb: 'Micronutrients, water-soluble NPK and bio-fertilizers for healthy soils.',
   },
+  {
+    slug: 'bio-stimulants',
+    name: 'Bio-Stimulants',
+    icon: '🧬',
+    image: '/images/cat-bio-stimulants.webp',
+    blurb: 'Humic acids, spreaders and bio-stimulants that boost soil health and crop vigour.',
+  },
 ]
 
 export const HERO_SLIDES = [
