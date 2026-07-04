@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { SITE, PRODUCT_CATEGORIES } from '../data/site.js'
+import LanguageSwitcher from './LanguageSwitcher.jsx'
 
 const navLinkClass = ({ isActive }) =>
   `rounded-md px-3 py-2 text-sm font-semibold transition-colors ${
@@ -118,9 +119,13 @@ export default function Navbar() {
           <NavLink to="/gallery" className={navLinkClass}>Gallery</NavLink>
           <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
 
+          <div className="ml-1">
+            <LanguageSwitcher />
+          </div>
+
           <Link
             to="/contact"
-            className="ml-3 rounded-full bg-leaf-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-leaf-700 hover:shadow-md"
+            className="ml-2 rounded-full bg-leaf-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-leaf-700 hover:shadow-md"
           >
             Get in Touch
           </Link>
@@ -184,6 +189,11 @@ export default function Navbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
+            </div>
+
+            {/* Language */}
+            <div className="relative flex justify-start px-6 pt-4">
+              <LanguageSwitcher dark />
             </div>
 
             {/* Main links */}

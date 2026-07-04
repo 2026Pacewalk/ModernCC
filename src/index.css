@@ -59,6 +59,23 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Hide the Google Translate banner/toolbar it injects at the top of the page */
+.goog-te-banner-frame,
+.skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+}
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
 body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
