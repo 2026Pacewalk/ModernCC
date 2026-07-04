@@ -2,7 +2,24 @@ import { useState, useMemo } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import PageHero from '../components/PageHero.jsx'
 import { PRODUCTS } from '../data/products.js'
-import { PRODUCT_CATEGORIES } from '../data/site.js'
+import { SITE, PRODUCT_CATEGORIES } from '../data/site.js'
+
+function whatsappLink(product) {
+  const message =
+    `Hello ${SITE.name},\n\n` +
+    `I'm interested in *${product.name}*` +
+    (product.technical ? ` (${product.technical})` : '') +
+    `.\nPlease share the price and more details.`
+  return `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(message)}`
+}
+
+function WhatsAppIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 01-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.38 9.38 0 01-1.44-5A9.43 9.43 0 0112.05 2.6a9.4 9.4 0 016.67 2.77 9.4 9.4 0 012.76 6.67c0 5.2-4.23 9.44-9.44 9.44zm8.03-17.47A11.32 11.32 0 0012.04.7 11.38 11.38 0 00.66 12.07c0 2 .52 3.96 1.52 5.69L.56 23.4l5.78-1.52a11.35 11.35 0 005.7 1.45h.01c6.27 0 11.38-5.1 11.38-11.38a11.3 11.3 0 00-3.36-8.04z" />
+    </svg>
+  )
+}
 
 function ProductCard({ product, onOpen }) {
   return (
@@ -116,12 +133,15 @@ function ProductModal({ product, onClose }) {
               )}
             </div>
 
-            <Link
-              to="/contact"
-              className="mt-1 inline-block self-start rounded-full bg-leaf-600 px-8 py-3 text-sm font-bold text-white transition-colors hover:bg-leaf-700"
+            <a
+              href={whatsappLink(product)}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-1 inline-flex items-center gap-2.5 self-start rounded-full bg-[#25D366] px-8 py-3 text-sm font-bold text-white shadow-md shadow-[#25D366]/25 transition-all hover:bg-[#1eb858] hover:shadow-lg"
             >
-              Enquire About This Product
-            </Link>
+              <WhatsAppIcon className="h-5 w-5" />
+              Enquire on WhatsApp
+            </a>
           </div>
         </div>
       </div>

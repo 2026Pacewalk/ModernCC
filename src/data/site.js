@@ -4,6 +4,7 @@ export const SITE = {
   tagline: 'Bringing Growth to Agriculture',
   established: 2015,
   phones: ['+91 96466 93671', '+91 96466 93672', '+91 98885 88965'],
+  whatsapp: '919646693671',
   email: 'modernccc2015@gmail.com',
   address: 'Shop No. 1&2, 1st Floor, Masjid Complex, Grain Market, Bathinda',
   social: {
