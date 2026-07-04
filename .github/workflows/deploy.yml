@@ -1,0 +1,54 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Upload dist to VPS
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT || 22 }}
+          source: "dist/*"
+          target: /var/www/moderncc/incoming
+          strip_components: 1
+          rm: true
+
+      - name: Activate release
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT || 22 }}
+          script: |
+            set -e
+            sudo rm -rf /var/www/moderncc/current.old
+            [ -d /var/www/moderncc/current ] && sudo mv /var/www/moderncc/current /var/www/moderncc/current.old
+            sudo mv /var/www/moderncc/incoming /var/www/moderncc/current
+            sudo chown -R www-data:www-data /var/www/moderncc/current
+            sudo systemctl reload nginx
+            echo "Deployed."
