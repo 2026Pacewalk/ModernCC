@@ -73,19 +73,6 @@ export const HERO_SLIDES = [
   },
 ]
 
-export const TEAM = [
-  { name: 'Shawinder Singh', role: 'Sales Representative', area: 'Barnala', image: '/images/team/shawinder-singh.png' },
-  { name: 'Jaswinder Singh Brar', role: 'Area Sales Manager', area: 'Kotkapura', image: '/images/team/jaswinder-singh.png' },
-  { name: 'Darshan Singh Maan', role: 'Area Sales Manager', area: 'Sunam', image: '/images/team/darshan-singh-maan.jpg' },
-  { name: 'Bhupinder Singh', role: 'Area Sales Manager', area: 'Barnala', image: '/images/team/bhupinder-singh.jpg' },
-  { name: 'Angrej Singh', role: 'Area Sales Manager', area: 'Muktsar', image: '/images/team/angrej-singh.jpg' },
-  { name: 'Jaswinder Singh', role: 'Area Sales Manager', area: 'Malout', image: '/images/team/jaswinder-malout.jpg' },
-  { name: 'Satnam Singh Deol', role: 'Area Sales Manager', area: 'Hanumangarh', image: '/images/team/satnam-hanumangarh.jpg' },
-  { name: 'Satnam Singh Brar', role: 'Area Sales Manager', area: 'Moga', image: '/images/team/satnam-singh-brar.jpg' },
-  { name: 'Sukhpal Samra', role: 'Area Sales Manager', area: 'Sri Ganganagar', image: '/images/team/sukhpal-samra.jpg' },
-  { name: 'Rajdeep Singh', role: 'Area Sales Manager', area: 'Mansa', image: '/images/team/rajdeep-singh.jpg' },
-]
-
 export const GALLERY_IMAGES = [
   '/images/gallery/gallery-1.jpg',
   '/images/gallery/gallery-2.jpg',

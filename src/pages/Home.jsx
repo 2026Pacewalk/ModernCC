@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
-import { SITE, HERO_SLIDES, PRODUCT_CATEGORIES, TEAM } from '../data/site.js'
+import { SITE, HERO_SLIDES, PRODUCT_CATEGORIES } from '../data/site.js'
 import SectionHeading from '../components/SectionHeading.jsx'
 import ContactForm from '../components/ContactForm.jsx'
 
@@ -214,42 +214,6 @@ function ProductRange() {
   )
 }
 
-function Team() {
-  return (
-    <section className="bg-soil-50 py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="Meet the People"
-          title="Our Team"
-          subtitle="We have a team of professionals, dedicated to providing excellent service."
-        />
-        <div className="mt-12 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
-          {TEAM.map((member) => (
-            <div
-              key={`${member.name}-${member.area}`}
-              className="group overflow-hidden rounded-2xl bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
-            >
-              <div className="aspect-square overflow-hidden bg-leaf-100">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  loading="lazy"
-                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-4 text-center">
-                <h3 className="font-display text-sm font-bold text-soil-900">{member.name}</h3>
-                <p className="mt-1 text-xs font-medium text-leaf-600">{member.role}</p>
-                <p className="text-xs text-soil-800/50">{member.area}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function ContactStrip() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
@@ -303,7 +267,6 @@ export default function Home() {
       <AboutIntro />
       <Principles />
       <ProductRange />
-      <Team />
       <ContactStrip />
     </>
   )
