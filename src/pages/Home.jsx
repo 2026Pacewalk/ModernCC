@@ -1,8 +1,15 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { SITE, HERO_SLIDES, PRODUCT_CATEGORIES } from '../data/site.js'
+import { PRODUCTS } from '../data/products.js'
 import SectionHeading from '../components/SectionHeading.jsx'
 import ContactForm from '../components/ContactForm.jsx'
+
+// One highlighted product from each category for the home showcase.
+const FEATURED = PRODUCT_CATEGORIES.map((cat) => {
+  const product = (PRODUCTS[cat.slug] || []).find((p) => p.image)
+  return product ? { ...product, category: cat.slug } : null
+}).filter(Boolean)
 
 function Hero() {
   const [current, setCurrent] = useState(0)
@@ -214,6 +221,57 @@ function ProductRange() {
   )
 }
 
+function FeaturedProducts() {
+  return (
+    <section className="bg-soil-50 py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="Our Products"
+          title="Trusted by farmers across the region"
+          subtitle="A glimpse of our crop protection and nutrition range — explore the full catalogue for detailed specifications."
+        />
+
+        <div className="mt-12 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-6">
+          {FEATURED.map((product) => (
+            <Link
+              key={`${product.category}-${product.name}`}
+              to={`/products/${product.category}`}
+              className="group flex flex-col overflow-hidden rounded-2xl border border-soil-100 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-leaf-200 hover:shadow-xl hover:shadow-leaf-600/10"
+            >
+              <div className="flex aspect-square items-center justify-center bg-gradient-to-b from-leaf-50/60 to-white p-4">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  loading="lazy"
+                  className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="border-t border-soil-100 p-3 text-center">
+                <h3 className="truncate font-display text-sm font-bold text-soil-900 group-hover:text-leaf-700">
+                  {product.name}
+                </h3>
+                <p className="mt-0.5 truncate text-[11px] font-medium text-harvest-500">{product.technical}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <Link
+            to="/products/insecticides"
+            className="inline-flex items-center gap-2 rounded-full bg-leaf-600 px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-leaf-600/20 transition-all hover:bg-leaf-700 hover:shadow-xl"
+          >
+            View All Products
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </Link>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function ContactStrip() {
   return (
     <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
@@ -267,6 +325,7 @@ export default function Home() {
       <AboutIntro />
       <Principles />
       <ProductRange />
+      <FeaturedProducts />
       <ContactStrip />
     </>
   )
