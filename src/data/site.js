@@ -98,9 +98,3 @@ export const GALLERY_IMAGES = [
   '/images/gallery/gallery-9.jpg',
   '/images/gallery/gallery-10.jpg',
 ]
-
-export const VIDEOS = [
-  { id: '-v5FgNuPbZc', title: 'Modern Crop Care Chemicals' },
-  { id: 'sbPkhzR5C3M', title: 'Our Products in the Field' },
-  { id: 'eJqv21znxLM', title: 'Farmer Success Stories' },
-]

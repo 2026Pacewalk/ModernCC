@@ -116,7 +116,6 @@ export default function Navbar() {
           </div>
 
           <NavLink to="/gallery" className={navLinkClass}>Gallery</NavLink>
-          <NavLink to="/videos" className={navLinkClass}>Our Videos</NavLink>
           <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
 
           <Link
@@ -193,7 +192,6 @@ export default function Navbar() {
                 { to: '/', label: 'Home', end: true },
                 { to: '/about', label: 'About Us' },
                 { to: '/gallery', label: 'Gallery' },
-                { to: '/videos', label: 'Our Videos' },
                 { to: '/contact', label: 'Contact' },
               ].map((item, i) => (
                 <NavLink

@@ -4,7 +4,6 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Products from './pages/Products.jsx'
 import Gallery from './pages/Gallery.jsx'
-import Videos from './pages/Videos.jsx'
 import Contact from './pages/Contact.jsx'
 import NotFound from './pages/NotFound.jsx'
 
@@ -16,7 +15,6 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/products/:category" element={<Products />} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/videos" element={<Videos />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Route>
