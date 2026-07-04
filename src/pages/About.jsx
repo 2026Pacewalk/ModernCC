@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
+import Seo from '../components/Seo.jsx'
 import { SITE, PRODUCT_CATEGORIES } from '../data/site.js'
 
 const VALUES = [
@@ -36,6 +37,11 @@ export default function About() {
 
   return (
     <>
+      <Seo
+        title="About Us"
+        description="Established in 2015, Modern Crop Care Chemicals is a Bathinda-based marketing company supplying high-quality insecticides, herbicides, fungicides, fertilizers and plant growth regulators across Punjab and Rajasthan."
+        path="/about"
+      />
       <PageHero title="About Us" image="/images/page-header.jpg" />
 
       {/* Mission */}

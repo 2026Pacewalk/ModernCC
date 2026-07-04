@@ -4,6 +4,7 @@ import { SITE, HERO_SLIDES, PRODUCT_CATEGORIES } from '../data/site.js'
 import { PRODUCTS } from '../data/products.js'
 import SectionHeading from '../components/SectionHeading.jsx'
 import ContactForm from '../components/ContactForm.jsx'
+import Seo from '../components/Seo.jsx'
 
 // One highlighted product from each category for the home showcase.
 const FEATURED = PRODUCT_CATEGORIES.map((cat) => {
@@ -321,6 +322,11 @@ function ContactStrip() {
 export default function Home() {
   return (
     <>
+      <Seo
+        title="Modern Crop Care Chemicals | Insecticides, Herbicides, Fungicides & Fertilizers"
+        description="Trusted agrochemical company in Bathinda since 2015. We supply insecticides, herbicides, fungicides, plant growth regulators, fertilizers and bio-stimulants across Punjab and Rajasthan."
+        path="/"
+      />
       <Hero />
       <AboutIntro />
       <Principles />

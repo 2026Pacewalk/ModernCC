@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import PageHero from '../components/PageHero.jsx'
+import Seo from '../components/Seo.jsx'
 import { PRODUCTS } from '../data/products.js'
 import { SITE, PRODUCT_CATEGORIES } from '../data/site.js'
 
@@ -171,8 +172,30 @@ export default function Products() {
 
   if (!catInfo || !products) return <Navigate to="/" replace />
 
+  const seoDescription = `Explore our range of ${products.length} ${catInfo.name.toLowerCase()} from Modern Crop Care Chemicals — ${catInfo.blurb} View technical details, pack sizes and recommended crops.`
+
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://moderncropcarechemicals.com/' },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: catInfo.name,
+        item: `https://moderncropcarechemicals.com/products/${catInfo.slug}`,
+      },
+    ],
+  }
+
   return (
     <>
+      <Seo
+        title={`${catInfo.name} — Products`}
+        description={seoDescription}
+        path={`/products/${catInfo.slug}`}
+        jsonLd={breadcrumbLd}
+      />
       <PageHero title={catInfo.name} crumb={catInfo.name} image="/images/page-header.jpg" />
 
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">

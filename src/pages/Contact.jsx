@@ -1,10 +1,16 @@
 import PageHero from '../components/PageHero.jsx'
 import ContactForm from '../components/ContactForm.jsx'
+import Seo from '../components/Seo.jsx'
 import { SITE } from '../data/site.js'
 
 export default function Contact() {
   return (
     <>
+      <Seo
+        title="Contact Us"
+        description="Contact Modern Crop Care Chemicals, Grain Market, Bathinda. Call +91 96466 93671 or email modernccc2015@gmail.com for products, prices and dealership enquiries."
+        path="/contact"
+      />
       <PageHero title="Contact Us" image="/images/page-header.jpg" />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero.jsx'
 import SectionHeading from '../components/SectionHeading.jsx'
+import Seo from '../components/Seo.jsx'
 import { GALLERY_IMAGES } from '../data/site.js'
 
 export default function Gallery() {
@@ -20,6 +21,11 @@ export default function Gallery() {
 
   return (
     <>
+      <Seo
+        title="Gallery"
+        description="Photo gallery of Modern Crop Care Chemicals — our products, our people and the farms we serve across Punjab and Rajasthan."
+        path="/gallery"
+      />
       <PageHero title="Gallery" image="/images/page-header.jpg" />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
