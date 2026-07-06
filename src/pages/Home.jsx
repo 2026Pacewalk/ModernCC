@@ -237,9 +237,9 @@ function FeaturedProducts() {
             <Link
               key={`${product.category}-${product.name}`}
               to={`/products/${product.category}`}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-soil-100 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-leaf-200 hover:shadow-xl hover:shadow-leaf-600/10"
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-soil-100 bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-leaf-200 hover:shadow-xl hover:shadow-leaf-600/10"
             >
-              <div className="flex aspect-square items-center justify-center bg-gradient-to-b from-leaf-50/60 to-white p-4">
+              <div className="flex h-44 shrink-0 items-center justify-center bg-gradient-to-b from-leaf-50/60 to-white p-4">
                 <img
                   src={product.image}
                   alt={product.name}
@@ -247,7 +247,7 @@ function FeaturedProducts() {
                   className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="border-t border-soil-100 p-3 text-center">
+              <div className="flex flex-1 flex-col justify-center border-t border-soil-100 p-3 text-center">
                 <h3 className="truncate font-display text-sm font-bold text-soil-900 group-hover:text-leaf-700">
                   {product.name}
                 </h3>
