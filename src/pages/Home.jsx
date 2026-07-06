@@ -34,9 +34,7 @@ function Hero() {
           <img
             src={slide.image}
             alt=""
-            className={`h-full w-full object-cover transition-transform duration-[7000ms] ease-out ${
-              i === current ? 'scale-110' : 'scale-100'
-            }`}
+            className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-leaf-950/90 via-leaf-950/20 to-leaf-950/10" />
         </div>
