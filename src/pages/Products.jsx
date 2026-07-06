@@ -27,9 +27,9 @@ function ProductCard({ product, onOpen }) {
     <button
       type="button"
       onClick={onOpen}
-      className="group flex flex-col overflow-hidden rounded-3xl border border-soil-100 bg-white text-left shadow-sm transition-all hover:-translate-y-1.5 hover:border-leaf-200 hover:shadow-xl hover:shadow-leaf-600/10"
+      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-soil-100 bg-white shadow-sm transition-all hover:-translate-y-1.5 hover:border-leaf-200 hover:shadow-xl hover:shadow-leaf-600/10"
     >
-      <div className="flex aspect-square items-center justify-center bg-gradient-to-b from-leaf-50/60 to-white p-6">
+      <div className="flex h-52 shrink-0 items-center justify-center bg-gradient-to-b from-leaf-50/60 to-white p-5">
         {product.image ? (
           <img
             src={product.image}
@@ -38,24 +38,20 @@ function ProductCard({ product, onOpen }) {
             className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
-          <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-soil-800/30">
+          <div className="flex flex-col items-center gap-2 text-soil-800/30">
             <span className="text-5xl">🧴</span>
             <span className="text-xs font-medium">Image coming soon</span>
           </div>
         )}
       </div>
-      <div className="flex flex-1 flex-col gap-2 border-t border-soil-100 p-5">
-        <h3 className="font-display text-lg font-bold text-soil-900 group-hover:text-leaf-700">{product.name}</h3>
-        <p className="text-xs font-semibold uppercase tracking-wide text-harvest-500">{product.technical}</p>
-        <p className="line-clamp-2 text-sm leading-relaxed text-soil-800/60">{product.description}</p>
-        <div className="mt-auto flex flex-wrap gap-1.5 pt-2">
-          {product.packSizes.slice(0, 4).map((size) => (
-            <span key={size} className="rounded-full bg-leaf-50 px-2.5 py-1 text-xs font-semibold text-leaf-700">
-              {size}
-            </span>
-          ))}
-        </div>
-        <span className="pt-2 text-xs font-bold uppercase tracking-wider text-leaf-600 opacity-0 transition-opacity group-hover:opacity-100">
+      <div className="flex flex-1 flex-col justify-center border-t border-soil-100 p-4 text-center">
+        <h3 className="truncate font-display text-base font-bold text-soil-900 group-hover:text-leaf-700">
+          {product.name}
+        </h3>
+        <p className="mt-1 truncate text-xs font-semibold uppercase tracking-wide text-harvest-500">
+          {product.technical}
+        </p>
+        <span className="mt-2 text-[11px] font-bold uppercase tracking-wider text-leaf-600 opacity-0 transition-opacity group-hover:opacity-100">
           View Details →
         </span>
       </div>
