@@ -117,7 +117,17 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-white/50 sm:flex-row sm:px-6 lg:px-8">
           <p>© {new Date().getFullYear()} Modern Crop Care Chemicals. All rights reserved.</p>
-          <p>Designed by Pacewalk</p>
+          <p>
+            Designed by{' '}
+            <a
+              href="https://pacewalk.com"
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold text-harvest-400 transition-colors hover:text-harvest-500"
+            >
+              PACEWALK
+            </a>
+          </p>
         </div>
       </div>
     </footer>
