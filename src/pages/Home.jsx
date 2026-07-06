@@ -38,22 +38,22 @@ function Hero() {
               i === current ? 'scale-110' : 'scale-100'
             }`}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-leaf-950/85 via-leaf-950/55 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-leaf-950/90 via-leaf-950/20 to-leaf-950/10" />
         </div>
       ))}
 
-      <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-4 sm:px-6 lg:px-8">
-        <div key={current} className="max-w-2xl animate-[fadeUp_0.8s_ease_both]">
-          <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-harvest-500/15 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-harvest-400 ring-1 ring-harvest-500/30">
+      <div className="relative z-10 mx-auto flex h-full max-w-7xl items-end px-4 pb-20 sm:px-6 sm:pb-24 lg:px-8">
+        <div key={current} className="max-w-2xl animate-[fadeUp_0.8s_ease_both] [text-shadow:0_2px_16px_rgb(0_0_0/45%)]">
+          <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-harvest-500/20 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-harvest-300 ring-1 ring-harvest-400/40 [text-shadow:none]">
             {HERO_SLIDES[current].subtitle}
           </p>
-          <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
             {HERO_SLIDES[current].title}
           </h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
+          <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/85 sm:text-base">
             {HERO_SLIDES[current].text}
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-7 flex flex-wrap gap-4">
             <Link
               to="/about"
               className="rounded-full bg-harvest-500 px-7 py-3.5 text-sm font-bold text-leaf-950 shadow-lg shadow-harvest-500/25 transition-all hover:bg-harvest-400 hover:shadow-xl"

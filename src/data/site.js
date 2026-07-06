@@ -62,22 +62,22 @@ export const PRODUCT_CATEGORIES = [
 
 export const HERO_SLIDES = [
   {
-    image: '/images/slides/slider-0.jpg',
+    image: '/images/slides/hero-banner-1.webp',
     subtitle: 'Modern Crop Care Chemicals',
-    title: 'Bringing Growth to Agriculture',
-    text: 'We offer a wide range of pesticide/ insecticides/ weedicides/ fungicides/ fertilizers/ plant growth regulators products.',
+    title: 'Complete Crop Protection',
+    text: 'A wide range of insecticides and fungicides that safeguard your crops from pests and disease.',
   },
   {
-    image: '/images/slides/slider-1.jpg',
-    subtitle: 'Growing with nature',
-    title: 'Cultivating Ideas for Growth',
-    text: 'To lead the market with product excellence and support the end-user with cost-effective and innovative products and practices for rapid growth and high performance.',
+    image: '/images/slides/hero-banner-2.webp',
+    subtitle: 'Growing with Nature',
+    title: 'Effective Weed Control',
+    text: 'Selective and non-selective herbicides for clean fields and higher yields across every crop.',
   },
   {
-    image: '/images/slides/slider-3.jpg',
+    image: '/images/slides/hero-banner-3.webp',
     subtitle: 'Since 2015',
-    title: 'Finest Products, Finest Agriculture',
-    text: 'A big distributors and dealers network across Punjab and Rajasthan, bringing high-quality products to farmers.',
+    title: 'Complete Plant Nutrition',
+    text: 'Water-soluble fertilizers, micronutrients and bio-stimulants that boost growth and productivity.',
   },
 ]
 
