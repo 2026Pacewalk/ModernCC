@@ -80,7 +80,7 @@ export default function About() {
 
           <div className="relative">
             <img
-              src="/images/about-image.jpg"
+              src="/images/about-image.webp"
               alt="Modern Crop Care Chemicals"
               className="aspect-[4/5] w-full rounded-3xl object-cover shadow-2xl shadow-leaf-900/15"
             />
