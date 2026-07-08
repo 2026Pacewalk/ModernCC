@@ -32,7 +32,7 @@ function Hero() {
           aria-hidden={i !== current}
         >
           <img
-            src={slide.image}
+            src={`${slide.image}?v=${ASSET_VERSION}`}
             alt=""
             className="h-full w-full object-cover"
           />
