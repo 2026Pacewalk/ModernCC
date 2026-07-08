@@ -227,6 +227,24 @@ export const PRODUCTS = {
       pests: "Whitefly",
       image: "/images/products/sniper.webp",
     },
+    {
+      name: "Tarzan",
+      technical: "Emamectin Benzoate 1.5% + Fipronil 3.5% SC",
+      description: "Tarzan Insecticide is a potent agricultural solution, formulated with the perfect combination of Emamectin Benzoate and Fipronil. It's designed to offer enhanced protection for a range of crops from harmful pests.",
+      packSizes: ["500ml","1ltr"],
+      crops: "Chili, Cotton, Cumin, Onion, and Garlic.",
+      pests: "Thrips, Fruit borers.",
+      image: "/images/products/tarzan.webp",
+    },
+    {
+      name: "Thomas Super",
+      technical: "Thiamethoxam 75% SG",
+      description: "Thomas Super insecticide is a broad-spectrum systemic action insecticide that belongs to the neonicotinoid group. Thiamethoxam molecule in Thomas Super insecticide acts as systemic action and inhibits a specific protein in the brain (nicotinic Acetylcholine receptor), which disrupts the reflex actions in pests.",
+      packSizes: ["125gm","250gm","500gm"],
+      crops: "Cotton, Paddy, Groundnut, Sugarcane.",
+      pests: "Jassids, Thrips, GLH & BPH, Termites, Early Shoot Borer.",
+      image: "/images/products/thomas-super.webp",
+    },
   ],
   fungicides: [
     {
