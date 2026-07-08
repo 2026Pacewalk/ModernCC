@@ -77,7 +77,7 @@ export default function Navbar() {
           <img
             src="/images/logo-animated.gif"
             alt="MODERN flag"
-            className="hidden h-12 w-auto sm:block"
+            className="h-10 w-auto sm:h-12"
           />
         </Link>
 
