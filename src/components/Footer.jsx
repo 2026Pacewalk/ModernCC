@@ -23,7 +23,7 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3">
             <img src="/images/logo.png" alt="Modern Crop Care Chemicals logo" className="h-16 w-auto" />
-            <div className="leading-tight">
+            <div className="notranslate leading-tight" translate="no">
               <p className="font-display text-sm font-bold">Modern Crop Care</p>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-harvest-400">Chemicals</p>
             </div>
