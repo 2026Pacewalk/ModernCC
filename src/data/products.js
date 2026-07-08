@@ -22,7 +22,7 @@ export const PRODUCTS = {
     },
     {
       name: "Antra",
-      technical: "HYPERLINK \"https://www.iffcobazar.in/en/product/kashima-chlorantriniprole-0-4-gr-4-kg\" \\t \"_blank\"Chlorantraniliprole 0.4% GR",
+      technical: "Chlorantraniliprole 0.4% GR",
       description: "ANTRA (Chlorantraniliprole 0.4% GR) insecticide powered by active ingredient Rynaxypyr active is an anthranilic diamide insecticide in the granular form effective for borer control in Rice and Sugarcane crops. It has a unique mode of action that controls pests that are resistant to other insecticides. It is selective and safe for non-target arthropods and conserves natural parasitoids, predators and pollinators. These attributes make Antra an excellent tool for Integrated Pest Management (IPM) and provide growers greater flexibility in field operations.",
       packSizes: ["4kg"],
       crops: "Rice, Sugarcane.",
