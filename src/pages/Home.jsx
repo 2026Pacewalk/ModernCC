@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
-import { SITE, HERO_SLIDES, PRODUCT_CATEGORIES } from '../data/site.js'
+import { SITE, HERO_SLIDES, PRODUCT_CATEGORIES, ASSET_VERSION } from '../data/site.js'
 import { PRODUCTS } from '../data/products.js'
 import SectionHeading from '../components/SectionHeading.jsx'
 import ContactForm from '../components/ContactForm.jsx'
@@ -239,7 +239,7 @@ function FeaturedProducts() {
             >
               <div className="flex h-44 shrink-0 items-center justify-center bg-gradient-to-b from-leaf-50/60 to-white p-4">
                 <img
-                  src={product.image}
+                  src={`${product.image}?v=${ASSET_VERSION}`}
                   alt={product.name}
                   loading="lazy"
                   className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"

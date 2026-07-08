@@ -3,7 +3,9 @@ import { useParams, Link, Navigate } from 'react-router-dom'
 import PageHero from '../components/PageHero.jsx'
 import Seo from '../components/Seo.jsx'
 import { PRODUCTS } from '../data/products.js'
-import { SITE, PRODUCT_CATEGORIES } from '../data/site.js'
+import { SITE, PRODUCT_CATEGORIES, ASSET_VERSION } from '../data/site.js'
+
+const imgSrc = (src) => `${src}?v=${ASSET_VERSION}`
 
 function whatsappLink(product) {
   const message =
@@ -32,7 +34,7 @@ function ProductCard({ product, onOpen }) {
       <div className="flex h-52 shrink-0 items-center justify-center bg-gradient-to-b from-leaf-50/60 to-white p-5">
         {product.image ? (
           <img
-            src={product.image}
+            src={imgSrc(product.image)}
             alt={product.name}
             loading="lazy"
             className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
@@ -88,7 +90,7 @@ function ProductModal({ product, onClose }) {
           <div className="flex items-center justify-center bg-gradient-to-b from-leaf-50 to-white px-6 py-8 sm:sticky sm:top-0 sm:h-full sm:min-h-[520px] sm:self-start">
             {product.image ? (
               <img
-                src={product.image}
+                src={imgSrc(product.image)}
                 alt={product.name}
                 className="max-h-[40vh] w-auto max-w-full object-contain drop-shadow-xl sm:max-h-[460px]"
               />

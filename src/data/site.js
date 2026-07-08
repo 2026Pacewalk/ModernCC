@@ -1,3 +1,6 @@
+// Bump this when product images are replaced (same filename) to bust the CDN/browser cache.
+export const ASSET_VERSION = 2
+
 export const SITE = {
   name: 'Modern Crop Care Chemicals',
   shortName: 'MCCC',
