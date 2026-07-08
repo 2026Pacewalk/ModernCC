@@ -218,6 +218,15 @@ export const PRODUCTS = {
       pests: "Bollworm",
       image: "/images/products/rubal.webp",
     },
+    {
+      name: "Sniper",
+      technical: "Pyriproxyfen 10% + Bifenthrin 10% W/W EC",
+      description: "Sniper is a premix insecticide having Pyriproxyfen 10% + Bifenthrin 10% EC. It is a unique combination of new generation broad spectrum insecticide and Insect Growth Regulator (IGR). It effectively controls all the stages of Whitefly i.e. Eggs, Nymphs and Adults. Sniper has translaminar activity, so it even kills the pest present at lower side of the leaves. Sniper controls Sooty mold that is spread by whitefly.",
+      packSizes: ["500ml","1ltr"],
+      crops: "Cotton",
+      pests: "Whitefly",
+      image: "/images/products/sniper.webp",
+    },
   ],
   fungicides: [
     {
