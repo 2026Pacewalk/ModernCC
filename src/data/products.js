@@ -364,6 +364,24 @@ export const PRODUCTS = {
       pests: "Fruit Rot, Powdery Mildew, Dieback, Purple Blotch, Sheath Blight, Yellow Rust, Early and Late blight, Downey Mildew, Powdery Mildew.",
       image: "/images/products/tulsi.webp",
     },
+    {
+      name: "Rockstar",
+      technical: "Thifluzamide 24% SC",
+      description: "Rockstar is a systemic fungicide with protective and curative action that controls rice sheath blight caused by Rhizoctonia solani very effectively. It belongs to the carboxanilide family. Rockstar is rapidly absorbed by foliage and is retained for a longer period as a parental molecule. It imparts a natural sheen to the paddy crop, is compatible with commonly used insecticides and fungicides, and is safe for beneficial insects.",
+      packSizes: ["500ml","1ltr"],
+      crops: "Paddy, Cotton.",
+      pests: "Neck Blast, Sheath Blast.",
+      image: "/images/products/rockstar.webp",
+    },
+    {
+      name: "Storm",
+      technical: "Validamycin 3% L",
+      description: "Storm (Validamycin 3% L) is an antibiotic fungicide which controls Sheath blight disease of Rice very effectively. It acts on hyphae and destroys the fungus by its contact action and controls the spread of diseases. STORM is also most effective against soil borne diseases and used for the control of Rhizoctonia solani in rice.",
+      packSizes: ["1ltr"],
+      crops: "Rice",
+      pests: "Sheath Blight",
+      image: "/images/products/storm.webp",
+    },
   ],
   herbicides: [
     {
