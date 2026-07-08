@@ -204,7 +204,7 @@ function ProductRange() {
             className="group flex flex-col items-center rounded-3xl border border-soil-100 bg-white p-6 text-center shadow-sm transition-all hover:-translate-y-1.5 hover:border-leaf-200 hover:shadow-xl hover:shadow-leaf-600/10"
           >
             <div className="flex h-28 w-28 items-center justify-center rounded-full bg-leaf-50 p-4 transition-colors group-hover:bg-leaf-100">
-              <img src={cat.image} alt={cat.name} className="max-h-full max-w-full object-contain" loading="lazy" />
+              <img src={`${cat.image}?v=${ASSET_VERSION}`} alt={cat.name} className="max-h-full max-w-full object-contain" loading="lazy" />
             </div>
             <h3 className="mt-5 font-display text-base font-bold text-soil-900 group-hover:text-leaf-700">
               {cat.name}
