@@ -59,7 +59,14 @@ export const PRODUCT_CATEGORIES = [
     name: 'Bio-Stimulants',
     icon: '🧬',
     image: '/images/cat-bio-stimulants.webp',
-    blurb: 'Humic acids, spreaders and bio-stimulants that boost soil health and crop vigour.',
+    blurb: 'Humic acids and seaweed bio-stimulants that boost soil health and crop vigour.',
+  },
+  {
+    slug: 'silicon-super-spreader',
+    name: 'Silicon Super Spreader',
+    icon: '💧',
+    image: '/images/cat-silicon-super-spreader.webp',
+    blurb: 'Non-ionic silicon adjuvants that improve spray coverage, penetration and efficacy.',
   },
 ]
 

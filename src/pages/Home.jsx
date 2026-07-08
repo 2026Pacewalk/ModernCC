@@ -230,7 +230,7 @@ function FeaturedProducts() {
           subtitle="A glimpse of our crop protection and nutrition range — explore the full catalogue for detailed specifications."
         />
 
-        <div className="mt-12 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-12 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
           {FEATURED.map((product) => (
             <Link
               key={`${product.category}-${product.name}`}

@@ -706,15 +706,6 @@ export const PRODUCTS = {
   ],
   'bio-stimulants': [
     {
-      name: "Agro-Vet",
-      technical: "Silicon Super Spreader",
-      description: "AGROVET (Silicon Super Spreader) are advanced non-ionic adjuvants used in agriculture to significantly improve the coverage, penetration, and efficacy of pesticides, herbicides, fungicides, and foliar fertilizers. They work by drastically reducing water surface tension, allowing sprays to spread evenly, penetrate stomata quickly, and resist being washed away by rain.",
-      packSizes: ["100ml","250ml","500ml"],
-      crops: "Vegetable Crops (Tomato, Potato, Okra, Cabbage, Cucumber, Capsicum, and Onion), Fruit Crops (Apple, Guava, Mango, Orange, Papaya, Grapes and Watermelon), Cereal & Cash Crops (Rice, Wheat, Maize, Sugarcane), Pulses/Oilseed Crops (Soybean, Chickpea, Mung Bean, Castor, Groundnut, Mustard, and Rapeseed).",
-      pests: null,
-      image: "/images/products/agrovet.webp",
-    },
-    {
       name: "Murari",
       technical: "Sargassum Tenerrimum 2% Granules",
       description: "MURARI (Sargassum Tenerrimum 2% Granules) is an organic, seaweed-based biostimulant used in agriculture to enhance crop yield, promote root/shoot development, and improve soil health. It boosts plant resistance to abiotic stress (drought, salinity) and enhances nutrient uptake. It is commonly used as a soil application for cereals, vegetables, fruits, and floriculture.",
@@ -749,6 +740,17 @@ export const PRODUCTS = {
       crops: "Vegetable Crops (Tomato, Potato, Okra, Cabbage, Cucumber, Capsicum, and Onion), Fruit Crops (Apple, Guava, Mango, Orange, Papaya, Grapes and Watermelon), Cereal & Cash Crops (Rice, Wheat, Maize, Sugarcane), Pulses/Oilseed Crops (Soybean, Chickpea, Mung Bean, Castor, Groundnut, Mustard, and Rapeseed).",
       pests: null,
       image: "/images/products/verticia.webp",
+    },
+  ],
+  'silicon-super-spreader': [
+    {
+      name: "Agro-Vet",
+      technical: "Silicon Super Spreader",
+      description: "AGROVET (Silicon Super Spreader) are advanced non-ionic adjuvants used in agriculture to significantly improve the coverage, penetration, and efficacy of pesticides, herbicides, fungicides, and foliar fertilizers. They work by drastically reducing water surface tension, allowing sprays to spread evenly, penetrate stomata quickly, and resist being washed away by rain.",
+      packSizes: ["100ml","250ml","500ml"],
+      crops: "Vegetable Crops (Tomato, Potato, Okra, Cabbage, Cucumber, Capsicum, and Onion), Fruit Crops (Apple, Guava, Mango, Orange, Papaya, Grapes and Watermelon), Cereal & Cash Crops (Rice, Wheat, Maize, Sugarcane), Pulses/Oilseed Crops (Soybean, Chickpea, Mung Bean, Castor, Groundnut, Mustard, and Rapeseed).",
+      pests: null,
+      image: "/images/products/agrovet.webp",
     },
   ],
 }
