@@ -575,6 +575,15 @@ export const PRODUCTS = {
       pests: null,
       image: "/images/products/surprise.webp",
     },
+    {
+      name: "Bloom",
+      technical: "Ethephon 39% SL",
+      description: "Bloom is a versatile plant growth regulator which improves coloration and accelerates uniform ripening of fruits like pineapple, mango, tomato, etc. It can be deployed in specific uses like defoliation in pomegranate and breaking alternate bearing in mango.",
+      packSizes: ["500ml","1ltr"],
+      crops: "Mango, Pineapple, Coffee, Tomato, Rubber, Pomegranate.",
+      pests: "Flower induction in juvenile mango, post-harvest treatment, uniform ripening of berries.",
+      image: "/images/products/bloom.webp",
+    },
   ],
   fertilizers: [
     {
