@@ -64,20 +64,20 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        <Link to="/" className="flex shrink-0 items-center gap-3">
-          <img src="/images/logo.png" alt="Modern Crop Care Chemicals logo" className="h-14 w-auto" />
-          <span className="notranslate hidden flex-col leading-tight min-[420px]:flex" translate="no">
-            <span className="font-display text-base font-800 font-bold tracking-tight text-leaf-800">
+        <Link to="/" className="flex shrink-0 items-center gap-2 sm:gap-3">
+          <img src="/images/logo.png" alt="Modern Crop Care Chemicals logo" className="h-11 w-auto sm:h-14" />
+          <span className="notranslate flex flex-col leading-tight" translate="no">
+            <span className="font-display text-sm font-bold tracking-tight text-leaf-800 sm:text-base">
               Modern Crop Care
             </span>
-            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-harvest-500">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-harvest-500 sm:text-xs sm:tracking-[0.22em]">
               Chemicals
             </span>
           </span>
           <img
             src="/images/logo-animated.gif"
             alt="MODERN flag"
-            className="h-10 w-auto sm:h-12"
+            className="h-9 w-auto sm:h-12"
           />
         </Link>
 
