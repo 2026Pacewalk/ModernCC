@@ -48,10 +48,27 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', onClick)
   }, [])
 
+  // Fully lock the background while the drawer is open. Using position:fixed
+  // (not just overflow:hidden) stops the page behind from scrolling on touch
+  // devices, then restores the scroll position on close.
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    if (!mobileOpen) return undefined
+    const scrollY = window.scrollY
+    const { body } = document
+    body.style.position = 'fixed'
+    body.style.top = `-${scrollY}px`
+    body.style.left = '0'
+    body.style.right = '0'
+    body.style.width = '100%'
+    body.style.overflow = 'hidden'
     return () => {
-      document.body.style.overflow = ''
+      body.style.position = ''
+      body.style.top = ''
+      body.style.left = ''
+      body.style.right = ''
+      body.style.width = ''
+      body.style.overflow = ''
+      window.scrollTo(0, scrollY)
     }
   }, [mobileOpen])
 
@@ -173,16 +190,18 @@ export default function Navbar() {
 
           {/* Drawer */}
           <div
-            className={`absolute right-0 top-0 flex h-full w-[86%] max-w-sm flex-col overflow-y-auto bg-gradient-to-b from-leaf-900 to-leaf-950 shadow-2xl transition-transform duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] ${
+            className={`absolute right-0 top-0 flex h-full w-[86%] max-w-sm flex-col overflow-hidden bg-gradient-to-b from-leaf-900 to-leaf-950 shadow-2xl transition-transform duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] ${
               drawerIn ? 'translate-x-0' : 'translate-x-full'
             }`}
           >
-            {/* Decorative glow */}
+            {/* Decorative glow (clipped by the drawer's overflow-hidden) */}
             <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-harvest-500/15 blur-3xl" />
             <div className="pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-leaf-500/10 blur-3xl" />
 
+            {/* Scrolling content — only real content can scroll, never the decorations */}
+            <div className="relative flex h-full flex-col overflow-y-auto overscroll-contain">
             {/* Header */}
-            <div className="relative flex items-center justify-between px-6 pb-2 pt-5">
+            <div className="relative flex items-center justify-between px-6 pb-2 pt-4">
               <div className="flex items-center gap-3">
                 <img src="/images/logo.png" alt="Modern Crop Care Chemicals logo" className="h-12 w-auto" />
                 <img src="/images/logo-animated.gif" alt="MODERN flag" className="h-10 w-auto" />
@@ -200,12 +219,12 @@ export default function Navbar() {
             </div>
 
             {/* Language */}
-            <div className="relative flex justify-start px-6 pt-4">
+            <div className="relative flex justify-start px-6 pt-3">
               <LanguageSwitcher dark />
             </div>
 
             {/* Main links */}
-            <nav className="relative flex flex-col gap-1 px-6 pt-4">
+            <nav className="relative flex flex-col gap-0.5 px-6 pt-3">
               {[
                 { to: '/', label: 'Home', end: true },
                 { to: '/about', label: 'About Us' },
@@ -218,7 +237,7 @@ export default function Navbar() {
                   end={item.end}
                   style={{ transitionDelay: `${80 + i * 60}ms` }}
                   className={({ isActive }) =>
-                    `group flex items-center justify-between rounded-xl px-3 py-2.5 font-display text-2xl font-bold transition-all duration-500 ${
+                    `group flex items-center justify-between rounded-xl px-3 py-2 font-display text-xl font-bold transition-all duration-500 ${
                       drawerIn ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                     } ${isActive ? 'text-harvest-400' : 'text-white hover:text-harvest-400'}`
                   }
@@ -240,7 +259,7 @@ export default function Navbar() {
             </nav>
 
             {/* Products */}
-            <div className="relative mt-5 px-6">
+            <div className="relative mt-3 px-6">
               <p
                 className={`text-xs font-bold uppercase tracking-[0.25em] text-white/40 transition-all duration-500 ${
                   drawerIn ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
@@ -249,13 +268,13 @@ export default function Navbar() {
               >
                 Our Products
               </p>
-              <div className="mt-3 grid grid-cols-2 gap-2.5">
+              <div className="mt-2.5 grid grid-cols-2 gap-2">
                 {PRODUCT_CATEGORIES.map((cat, i) => (
                   <Link
                     key={cat.slug}
                     to={`/products/${cat.slug}`}
                     style={{ transitionDelay: `${450 + i * 50}ms` }}
-                    className={`flex items-center gap-2.5 rounded-2xl border px-3.5 py-3 text-sm font-semibold transition-all duration-500 ${
+                    className={`flex items-center gap-2 rounded-2xl border px-3 py-2.5 text-sm font-semibold transition-all duration-500 ${
                       drawerIn ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                     } ${
                       pathname === `/products/${cat.slug}`
@@ -276,12 +295,12 @@ export default function Navbar() {
 
             {/* Contact footer */}
             <div
-              className={`relative mt-auto px-6 pb-7 pt-8 transition-all duration-500 ${
+              className={`relative mt-auto px-6 pb-5 pt-5 transition-all duration-500 ${
                 drawerIn ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
               }`}
               style={{ transitionDelay: '700ms' }}
             >
-              <div className="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
+              <div className="rounded-2xl bg-white/5 p-3.5 ring-1 ring-white/10">
                 <a
                   href={`tel:${SITE.phones[0].replace(/\s/g, '')}`}
                   className="flex items-center gap-3 text-sm font-semibold text-white transition-colors hover:text-harvest-400"
@@ -297,9 +316,10 @@ export default function Navbar() {
                   {SITE.email}
                 </a>
               </div>
-              <p className="mt-4 text-center text-[11px] font-medium uppercase tracking-[0.3em] text-white/30">
+              <p className="mt-3 text-center text-[11px] font-medium uppercase tracking-[0.3em] text-white/30">
                 Bringing Growth to Agriculture
               </p>
+            </div>
             </div>
           </div>
         </div>,
