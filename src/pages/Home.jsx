@@ -42,7 +42,7 @@ function Hero() {
 
       <div className="relative z-10 mx-auto flex h-full max-w-7xl items-end px-4 pb-20 sm:px-6 sm:pb-24 lg:px-8">
         <div key={current} className="max-w-2xl animate-[fadeUp_0.8s_ease_both] [text-shadow:0_2px_16px_rgb(0_0_0/45%)]">
-          <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-harvest-500/20 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-harvest-300 ring-1 ring-harvest-400/40 [text-shadow:none]">
+          <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-leaf-950/55 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-harvest-400 ring-1 ring-harvest-400/50 backdrop-blur-sm [text-shadow:none]">
             {HERO_SLIDES[current].subtitle}
           </p>
           <h1 className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
