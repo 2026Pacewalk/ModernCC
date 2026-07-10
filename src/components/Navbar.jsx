@@ -65,19 +65,20 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link to="/" className="flex shrink-0 items-center gap-2 sm:gap-3">
-          <img src="/images/logo.png" alt="Modern Crop Care Chemicals logo" className="h-11 w-auto sm:h-14" />
+          <img src="/images/logo.png" alt="Modern Crop Care Chemicals logo" className="h-12 w-auto sm:h-[68px]" />
           <span className="notranslate flex flex-col leading-tight" translate="no">
-            <span className="font-display text-sm font-bold tracking-tight text-leaf-800 sm:text-base">
+            <span className="font-display text-sm font-extrabold tracking-tight text-leaf-800 sm:text-lg">
               Modern Crop Care
             </span>
             <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-harvest-500 sm:text-xs sm:tracking-[0.22em]">
               Chemicals
             </span>
           </span>
+          {/* Flag next to logo — mobile/tablet only (moves to far right on desktop) */}
           <img
             src="/images/logo-animated.gif"
             alt="MODERN flag"
-            className="h-9 w-auto sm:h-12"
+            className="h-9 w-auto lg:hidden"
           />
         </Link>
 
@@ -129,6 +130,13 @@ export default function Navbar() {
           >
             Get in Touch
           </Link>
+
+          {/* Flag on far right after Get in Touch — desktop only */}
+          <img
+            src="/images/logo-animated.gif"
+            alt="MODERN flag"
+            className="ml-3 h-12 w-auto"
+          />
         </div>
 
         {/* Mobile hamburger */}
