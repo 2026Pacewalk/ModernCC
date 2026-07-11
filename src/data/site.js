@@ -13,6 +13,7 @@ export const SITE = {
   social: {
     facebook: 'https://www.facebook.com/moderncropcarechemicals/',
     instagram: 'https://www.instagram.com/modernccc_bti/',
+    youtube: 'https://www.youtube.com/@moderncropcarechemicals',
   },
   mapEmbed:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3448.384526269956!2d74.94243721511873!3d30.197570781826872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe00c1fe83e9dfbbd!2zMzDCsDExJzUxLjMiTiA3NMKwNTYnNDAuNyJF!5e0!3m2!1sen!2sin!4v1642696759438!5m2!1sen!2sin',

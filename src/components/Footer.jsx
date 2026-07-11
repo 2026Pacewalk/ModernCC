@@ -15,6 +15,12 @@ const InstagramIcon = (props) => (
   </svg>
 )
 
+const YouTubeIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M21.58 7.19c-.23-.86-.9-1.53-1.76-1.76C18.25 5 12 5 12 5s-6.25 0-7.82.43c-.86.23-1.53.9-1.76 1.76C2 8.76 2 12 2 12s0 3.24.42 4.81c.23.86.9 1.53 1.76 1.76C5.75 19 12 19 12 19s6.25 0 7.82-.43c.86-.23 1.53-.9 1.76-1.76C22 15.24 22 12 22 12s0-3.24-.42-4.81zM10 15V9l5.2 3-5.2 3z" />
+  </svg>
+)
+
 export default function Footer() {
   return (
     <footer className="bg-leaf-950 text-white">
@@ -50,6 +56,15 @@ export default function Footer() {
               className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-harvest-500 hover:text-leaf-950"
             >
               <InstagramIcon className="h-5 w-5" />
+            </a>
+            <a
+              href={SITE.social.youtube}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="YouTube"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-harvest-500 hover:text-leaf-950"
+            >
+              <YouTubeIcon className="h-5 w-5" />
             </a>
           </div>
         </div>
